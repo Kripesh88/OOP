@@ -1,0 +1,26 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+class item{
+private:
+int code, price;
+public:
+item(int c, int p){ //parameterized constructor
+code=c;
+price=p;
+}
+item(item &x){ //copy constructor-need to pass object of item as argument
+code=x.code; //b.code=a.code
+price=x.price;
+}
+void display(){
+cout<<"Code: "<<code<<endl<<"Price: "<<price;
+}
+};
+int main(){ 
+item a(100,200);
+item b(a);//copying a into b
+b.display();
+getch();
+return 0;
+ }
